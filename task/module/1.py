@@ -1,2 +1,2 @@
-a = int(input())
-print(a % 10, a//10)
+a = float(input())
+print(int((a * 10) % 10))
