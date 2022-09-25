@@ -17,18 +17,17 @@ if l == 1:
             o = c1 / c3
         print(c1, c2, c3, '=')
         q = input('Введите ответ: ')
-        while q != str(round(o, 2)):
-            print(c1, c2, c3, '=')
-            q = int(input('Неверно! Введите ответ: '))
+        if q != str(round(o, 1)) or q != str(round(o, 2)):
+            print('Неверно!')
         else:
             print('Верно!')
             count += 1
-    print(f'Ваш результат: {count}/10')
+    print(f'Ваш результат: {count}/10 ')
     if count < 3:
         print('Слабенько(')
     if 3 < count < 7:
         print('Удовлетворительно :/')
-    else:
+    if count > 7:
         print('А ты хорош ;D')
 else:
     count = 0
@@ -46,17 +45,16 @@ else:
             o = c1**c3
         print(c1, c2, c3, '=')
         q = input('Введите ответ: ')
-        while q != str(round(o, 2)):
-            print(c1, c2, c3, '=')
-            q = input('Неверно! Введите ответ: ')
+        if q != str(round(o, 1)) or q != str(round(o, 2)):
+            print('Неверно!')
         else:
             print('Верно!')
             count += 1
-    print(f'Ваш результат: {count}/10', end='')
+    print(f'Ваш результат: {count}/10 ', end='')
     if count < 3:
         print('Слабенько(')
     if 3 < count < 7:
         print('Удовлетворительно :/')
-    else:
+    if count > 7:
         print('А ты хорош ;D')
 
