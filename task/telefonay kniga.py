@@ -1,40 +1,50 @@
-def normalizator(no):
-    no = no.replace('-', '').replace(' ', '')
-    while not no.isdigit():
-        print('Неверно введен номер')
-        no = input()
+def normalizator():
+    no = input('Введите номер: ')
+    no = no.replace('-', '').replace(' ', '').replace('(', '').replace(')', '')
+    while not no[1:].isdigit():
+        no = input('Неверно введен номер: ')
     else:
-        while len(no) != 12:
-            if len(no) == 11:
-                return no.replace(no[0], '+7', 1)
-            if len(no) == 10:
-                return '+7' + no
-            no = input('Введите номер: ')
-        return no
+        if len(no) == 12:
+            return no
+        if len(no) == 11:
+            return no.replace(no[0], '+7', 1)
+        if len(no) == 10:
+            return '+7' + no
+        else:
+            print('Неверно введен номер: ')
+            return normalizator()
 
 
-def a1(n):
-    sl[input('ФИО: ').title()] = normalizator(input('Введите номер: '))
+def norm():
+    a = input('Введите ФИО: ').split()
+    return ' '.join(a).title()
+
+
+def a1():
+    sl[norm()] = normalizator()
     return 'Контакт сохранён'
 
-def a2(n):
+
+def a2():
+    n = norm()
     if sl[n] in sl:
         del sl[n]
-        return 'Успешно'
+        return 'Успешно', *sl
     else:
         return 'Контакт не существует'
 
 
-def a3(n):
+def a3():
     for b, c in sl.items():
         print(b, c)
 
 
-def a4(n):
+def a4():
+    n = norm()
     if sl.get(n) == None:
         return 'Такого контакта нет'
     else:
-        sl[n] = normalizator(input('Введите новый номер: '))
+        sl[n] = normalizator()
         return 'Успешно'
 
 
@@ -45,13 +55,13 @@ while True:
     n = input('Выберите функцию: ')
 
     if n == '1':
-        print(a1(n))
+        print(a1())
     if n == '2':
-        print(a2(input('Введите имя: ').title()))
+        print(a2())
     if n == '3':
-        a3(sl)
+        a3()
     if n == '4':
-        print(a4(input('Введите имя: ').title()))
+        print(a4())
     if n == '5':
         print('Спасибо за использование:D')
         print(*sl)
