@@ -25,11 +25,10 @@ def a1():
     return 'Контакт сохранён'
 
 
-def a2():
-    n = norm()
+def a2(n):
     if sl[n] in sl:
         del sl[n]
-        return 'Успешно', *sl
+        return 'Успешно'
     else:
         return 'Контакт не существует'
 
@@ -57,7 +56,7 @@ while True:
     if n == '1':
         print(a1())
     if n == '2':
-        print(a2())
+        print(a2(norm()))
     if n == '3':
         a3()
     if n == '4':
