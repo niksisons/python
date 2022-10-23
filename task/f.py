@@ -12,14 +12,31 @@ def a1(n):
 
 
 def a2(g, m, s):
+    '''
+
+    :param g:
+    :param m:
+    :param s:
+    :return:
+    '''
     return g + m/60 + s/3600
 
 
 def a3(n):
+    '''
+
+    :param n:
+    :return:
+    '''
     return n * (pi/180)
 
 
 def a4(n):
+    '''
+
+    :param n:
+    :return:
+    '''
     return n * (180/pi)
 
 
