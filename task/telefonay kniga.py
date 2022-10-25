@@ -26,7 +26,7 @@ def a1():
 
 
 def a2(n):
-    if sl[n] in sl:
+    if n in sl:
         del sl[n]
         return 'Успешно'
     else:
