@@ -1,10 +1,10 @@
 import random
 
 while True:
-    with open(r'C:\Users\nikita\PycharmProjects\python\practic work\pole_chudes\slova.txt', encoding='UTF8') as sl:
+    with open(r'/practic work/pole_chudes/slova.txt', encoding='UTF8') as sl:
         sl1 = random.choice(sl.read().splitlines()).lower()
         black_box = ['\u25A0' for i in range(len(sl1))]
-    with open(r'C:\Users\nikita\PycharmProjects\python\practic work\pole_chudes\records.txt', mode='r+',
+    with open(r'/practic work/pole_chudes/records.txt', mode='r+',
               encoding='UTF8') as r:
         rec = int(r.read())
         print(f'Ваш текущий рекорд: {rec}')

@@ -1,0 +1,3 @@
+import polechudes
+
+print(polechudes)

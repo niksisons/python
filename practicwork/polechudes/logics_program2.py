@@ -1,11 +1,10 @@
-import file_read
-
+import fileread
 
 
 def game():
     global rec
     global point
-    sl1 = file_read.slova()
+    sl1 = fileread.slova()
     black_box = ['\u25A0' for i in range(len(sl1))]
     print(f'Ваш текущий рекорд: {rec}')
     complexity = int(input('Выберите сложность(1, 2, 3): '))
@@ -40,11 +39,11 @@ def game():
     else:
         point += count
         if point > rec:
-            file_read.writed(str(point))
+            fileread.writed(str(point))
         print(f'Игра окончена. Ваш результат: {point}.')
 
 
-rec = file_read.records()
+rec = fileread.records()
 point = 0
 
 game()
