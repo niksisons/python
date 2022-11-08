@@ -1,9 +1,9 @@
-from polechudes import fileread
+from .fileread import *
 
 def game():
-    rec = fileread.records()
+    rec = records()
     point = 0
-    sl1 = fileread.slova()
+    sl1 = slova()
     black_box = ['\u25A0'] * len(sl1)
     print(f'Ваш текущий рекорд: {rec}')
     complexity = int(input('Выберите сложность(1, 2, 3): '))
@@ -41,7 +41,5 @@ def game():
     if continues:
         game()
     else:
-        fileread.writed(str(rec))
+        writed(str(rec))
         print(f'Игра окончена. Ваш результат: {point}.')
-
-
