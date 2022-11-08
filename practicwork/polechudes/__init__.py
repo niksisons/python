@@ -1,2 +1,2 @@
-from practicwork.polechudes.fileread import *
-from practicwork.polechudes.logics_program2 import *
+from polechudes.fileread import *
+from polechudes.logics_program2 import *

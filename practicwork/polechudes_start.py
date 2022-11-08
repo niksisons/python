@@ -1,3 +1,3 @@
 import polechudes
 
-print(polechudes)
+polechudes.game()
