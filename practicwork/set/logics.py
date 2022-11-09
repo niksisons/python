@@ -1,15 +1,20 @@
-def read_file():
-    with open('spis-input.txt', mode='r', encoding='utf8') as sp1:
-        spis_in = [i.lower() + '\n' for i in sp1.read().split()]
-        return spis_in
+def read_file(filename):
+    '''Читает файл, выдает сортированный список содержащихся в нем уникальных слов.'''
+    res = set()
+    with open(filename, mode='r', encoding='utf8') as infile:
+        # файлы могут быть большие и read в этом случае прочитает только кусок,
+        # возможно оборванный в середине слова
+        for line in infile:
+            res.update(word.strip('.,:;\'"()').lower() for word in line.split())
+    return sorted(res)
 
 
-def save_file(c, n):
-    with open('spis-output.txt', mode='a', encoding='utf8') as sp2:
-        sp2.write(str(c) + '\n')
-        sp2.writelines(n)
+def save_file(filename, wordlist):
+    '''Записывает в файл длину списка слов и слова из него, по одному на строке'''
+    count = len(wordlist)
+    with open(filename, mode='w', encoding='utf8') as outfile:
+        outfile.write(f'{count}\n')
+        for w in wordlist:
+            print(w, file=outfile)
 
-
-inputs = sorted(set(read_file()))
-count = len(inputs)
-save_file(count, inputs)
+save_file('spis-output.txt', read_file('spis-input.txt'))
