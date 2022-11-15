@@ -1,7 +1,13 @@
+import string
+
+
 def read_file():
     with open('spis-input.txt', 'r', encoding='utf8') as sp1:
-        return [i.replace('.', '').replace(',', '') + '\n' if '.' in i or ',' in i else i + '\n' for i in sp1.read()
-            .lower().split()]
+        z = str.maketrans('''!()-[]{};?@#$%:'"\,./^&amp;*_''', '                             ')
+        r = sp1.read().lower().translate(z).split()
+        return [i + '\n' for i in r]
+        # return [i.replace('.', '').replace(',', '') + '\n' if '.' in i or ',' in i else i + '\n' for i in sp1.read()
+        #     .lower().split()]
 
 
 def save_file(c, n):
