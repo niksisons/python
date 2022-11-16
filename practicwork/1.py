@@ -1,3 +1,3 @@
-import polechudes
+from practicwork import set
 
-polechudes.game()
+set.start()

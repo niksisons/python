@@ -1,6 +1,3 @@
-import string
-
-
 def read_file():
     with open('spis-input.txt', 'r', encoding='utf8') as sp1:
         z = str.maketrans('''!()-[]{};?@#$%:'"\,./^&amp;*_''', '                             ')
@@ -16,7 +13,10 @@ def save_file(c, n):
         sp2.writelines(n)
 
 
-inputs = sorted(set(read_file()))
-count = len(inputs)
-save_file(count, inputs)
+def start():
+    inputs = sorted(set(read_file()))
+    count = len(inputs)
+    save_file(count, inputs)
 
+
+start()
