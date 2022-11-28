@@ -1,23 +1,23 @@
 import random
 
-s1 = ['+', '-', '*', '/']
-s2 = ['+', '-', '*', '/', '^']
-l = int(input('Выберите уровень(1-2): '))
-if l == 1:
-    count = 0
+operation1 = ['+', '-', '*', '/']
+operation2 = ['+', '-', '*', '/', '^']
+complexity: int = int(input('Выберите уровень(1-2): '))
+if complexity == 1:
+    count: int = 0
     for i in range(10):
-        c1, c2, c3 = random.randrange(1, 10), random.choice(s1), random.randrange(1, 10)
-        if c2 == '+':
-            o = c1 + c3
-        if c2 == '-':
-            o = c1 - c3
-        if c2 == '*':
-            o = c1 * c3
-        if c2 == '/':
-            o = c1 / c3
-        print(c1, c2, c3, '=')
-        q = input('Введите ответ: ')
-        if q != str(round(o, 1)) or q != str(round(o, 2)):
+        chislo1, chislo2, chislo3 = random.randrange(1, 10), random.choice(operation1), random.randrange(1, 10)
+        if chislo2 == '+':
+            rez: float = chislo1 + chislo3
+        if chislo2 == '-':
+            rez: float = chislo1 - chislo3
+        if chislo2 == '*':
+            rez: float = chislo1 * chislo3
+        if chislo2 == '/':
+            rez: float = chislo1 / chislo3
+        print(chislo1, chislo2, chislo3, '=')
+        q: str = input('Введите ответ: ')
+        if q != str(round(rez, 1)) or q != str(round(rez, 2)):
             print('Неверно!')
         else:
             print('Верно!')
@@ -30,22 +30,22 @@ if l == 1:
     if count > 7:
         print('А ты хорош ;D')
 else:
-    count = 0
+    count: int = 0
     for i in range(10):
-        c1, c2, c3 = random.randrange(1, 1000), random.choice(s1), random.randrange(1, 1000)
-        if c2 == '+':
-            o = c1 + c3
-        if c2 == '-':
-            o = c1 - c3
-        if c2 == '*':
-            o = c1 * c3
-        if c2 == '/':
-            o = c1 / c3
-        if c2 == '^':
-            o = c1**c3
-        print(c1, c2, c3, '=')
-        q = input('Введите ответ: ')
-        if q != str(round(o, 1)) or q != str(round(o, 2)):
+        chislo1, chislo2, chislo3 = random.randrange(1, 1000), random.choice(operation1), random.randrange(1, 1000)
+        if chislo2 == '+':
+            rez: float = chislo1 + chislo3
+        if chislo2 == '-':
+            rez: float = chislo1 - chislo3
+        if chislo2 == '*':
+            rez: float = chislo1 * chislo3
+        if chislo2 == '/':
+            rez: float = chislo1 / chislo3
+        if chislo2 == '^':
+            rez: float = chislo1**chislo3
+        print(chislo1, chislo2, chislo3, '=')
+        q: str = input('Введите ответ: ')
+        if q != str(round(rez, 1)) or q != str(round(rez, 2)):
             print('Неверно!')
         else:
             print('Верно!')

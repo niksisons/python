@@ -1,7 +1,12 @@
 import random
 
 
-def a(ludi, gr):
+def paradocs(ludi: int, gr: int) -> float:
+    '''
+    :param ludi: Количество человек в группе.
+    :param gr: Количество групп.
+    :return: Вероятность того, что у этого количества человек в группе совпадут дни рождения.
+    '''
     count = 0
     for i in range(gr):
         sp = []
@@ -12,4 +17,4 @@ def a(ludi, gr):
     return count/(gr/100)
 
 
-print(a(60, 1000), '%', sep='')
+print(paradocs(60, 1000), '%', sep='')

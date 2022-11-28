@@ -1,7 +1,11 @@
-def opn_f(n):
+def opn_f(n: str):
+    '''
+    :param n: Строка с именем файла.
+    :return: -
+    '''
     f = open(n)
-    count = int(f.readline())
-    num_list = f.read().splitlines()
+    count: int = int(f.readline())
+    num_list: list[str] = f.read().splitlines()
     if count < len(num_list):
         raise ZeroDivisionError()
     for i in range(count):
@@ -10,38 +14,38 @@ def opn_f(n):
 
 
 try:
-    name = input('Введите имя файла: ')
+    name: str = input('Введите имя файла: ')
     print(opn_f(name))
 except FileNotFoundError:
     print("Такого файла нет!")
-    rez = False
+    rez: bool = False
 except NameError:
     print("Такого имени нет!")
-    rez = False
+    rez: bool = False
 except ValueError:
     print("Превая сторока имеет недопустимое значение!")
-    rez = False
+    rez: bool = False
 except TypeError:
     print("Несовместимые аргументы!")
-    rez = False
+    rez: bool = False
 except ZeroDivisionError:
     print('Неверные данные для итерации!!')
-    rez = False
+    rez: bool = False
 except MemoryError:
     print("Недостаточно оперативной памяти!")
-    rez = False
+    rez: bool = False
 except StopIteration:
     print("Неверные данные для итерации!*")
-    rez = False
+    rez: bool = False
 except IndexError:
     print("Неверные данные для итерации!/")
-    rez = False
+    rez: bool = False
 except:
     print("Fatality error!")
-    rez = False
+    rez: bool = False
 else:
     print(opn_f(name))
-    rez = True
+    rez: bool = True
 finally:
     try:
         print(f"Try: {'Успешно' if rez else 'Провал'}")
