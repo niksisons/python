@@ -19,4 +19,4 @@ content = request.urlopen(link).read().decode()
 match = re.findall(pattern, content)
 rez = [match[i: i+5] for i in range(0, len(match), 5)]
 for i in range(len(rez)):
-    print(*rez[i], '\n')
+    print(rez[i], '\n')
