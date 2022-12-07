@@ -2,7 +2,7 @@ import csv
 
 
 def get_book(pyythin):
-    with open('books.csv', newline='', encoding='utf8') as f:
+    with open('books.csv', encoding='utf8') as f:
         catalog = csv.reader(f, delimiter='|', quotechar=',')
         rez = [row if pyythin in row else '' for row in catalog]
         return rez
@@ -15,11 +15,3 @@ def get_totals(py):
 
 # print(get_book('Dow'))
 print(get_totals(get_book('Dow')))
-
-
-
-
-
-
-
-
