@@ -158,8 +158,3 @@ def del_file():
                 return 'Успех'
     else:
         return
-
-
-# print(directory())
-# print(start_directory())
-# print(list_file('docx'))
