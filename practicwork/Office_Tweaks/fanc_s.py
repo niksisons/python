@@ -2,7 +2,6 @@ import os
 from docx2pdf import convert
 from pdf2docx import parse
 from PIL import Image
-import re
 
 
 def start_directory():  # path
@@ -74,8 +73,8 @@ def compression():  # 3
     for i in list_file('png', 'jpg', 'gif'):
         print(*i)
     n = int(input('Выберите файл: '))
-    quality = int(input('Ведите уровень сжатия: '))
     if n != 0:
+        quality = int(input('Ведите уровень сжатия: '))
         for i in list_file('png', 'jpg', 'gif'):
             if i[0] == n:
                 Image.open(i[1]).save(i[1], quality=quality)
@@ -87,15 +86,15 @@ def compression():  # 3
 def delite_file_menu():  # 4
     c_fanc = menu()
     if c_fanc == 1:
-        del_start()
+        print(del_start())
     elif c_fanc == 2:
-        del_end()
+        print(del_end())
     elif c_fanc == 3:
-        del_middle()
+        print(del_middle())
     elif c_fanc == 4:
-        del_extension()
+        print(del_extension())
     else:
-        del_file()
+        print(del_file())
 
 
 def delite_file():
@@ -105,23 +104,26 @@ def delite_file():
 
 def del_start():
     delite_file()
-    contecst = input()
+    contecst = input('Введите подстроку: ')
     for i in list_file(''):
         if i[1].startswith(contecst):
             os.remove(i[1])
+    return 'Успех'
 
 
 def del_end():
     delite_file()
-    sp_pattern = []
-    for i in list_file(''):
-        sp_pattern.append(i[1])
-    contecst = input()
-    pattern = fr'({contecst})(?:\.\w+)'
-    match = re.findall(pattern, ' '.join(i for i in sp_pattern))
-    for i in match:
-        os.remove(i)
-    return 'Успех'
+    contecst = input('Введите подстроку: ')
+    if contecst != '0':
+        for i in list_file(''):
+            name_file = i[1].split('.')
+            if name_file[0].endswith(contecst):
+                os.remove(i[1])
+            return 'Успех'
+    else:
+        return
+        # pattern = fr'({contecst})(?:\.\w+)'
+        # match = re.findall(pattern, ' '.join(i for i in sp_pattern)
 
 
 def del_middle():
@@ -131,19 +133,19 @@ def del_middle():
         for i in list_file(''):
             if contecst in i[1]:
                 os.remove(i[1])
-                return 'Успех'
+        return 'Успех'
     else:
         return
 
 
 def del_extension():
     delite_file()
-    extension = input()
+    extension = input('Введите расширение: ')
     if extension != '0':
         for i in list_file(''):
             if i[1].endswith(extension):
                 os.remove(i[1])
-                return 'Успех'
+        return 'Успех'
     else:
         return
 
