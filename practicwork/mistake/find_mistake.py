@@ -15,7 +15,7 @@ def opn_f(n: str):
 
 try:
     name: str = input('Введите имя файла: ')
-    print(opn_f(name))
+    opn_f(name)
 except FileNotFoundError:
     print("Такого файла нет!")
     rez: bool = False
@@ -44,7 +44,6 @@ except:
     print("Fatality error!")
     rez: bool = False
 else:
-    print(opn_f(name))
     rez: bool = True
 finally:
     try:

@@ -1,7 +1,12 @@
 import re
-import requests
-from urllib import request
 
+from urllib import request
+import re
+import ssl
+import urllib.request
+
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 link = ' https://msk.spravker.ru/avtoservisy-avtotehcentry'
 # pattern_link = r'(?:<a href=\")([^<+]+)(?:\" title)(?:.*)'

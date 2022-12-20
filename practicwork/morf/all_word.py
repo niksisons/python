@@ -17,7 +17,7 @@ for i in norm:
     elif i not in slovar:
         slovar[i] = norm.count(i)
 slovar = dict(sorted(slovar.items(), key=lambda item: item[1], reverse=True))
-print(slovar)
+print(sorted(slovar))
 trnsl = []
 translates = Translator(from_lang='ru', to_lang='English')
 # print(translates.translate())
