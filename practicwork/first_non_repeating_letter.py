@@ -7,8 +7,5 @@ def first_non_repeating_letter(st):
         return ''
 
 
-# print(first_non_repeating_letter('SSTt'))
-
-n ={'1': 1, '2': 2, '3': 3}
-print(sorted(n, reverse=True))
+print(first_non_repeating_letter('SSTt'))
 
